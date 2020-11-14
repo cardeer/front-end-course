@@ -7,12 +7,22 @@
         <h2>Orders</h2>
 
         <div class="order-list">
-          <div class="list" v-for="i in 100" :key="i">asdf {{ i }}</div>
+          <div
+            class="list"
+            v-for="list in orderList"
+            :key="list.name"
+            @click="list.quantity++"
+          >
+            <p>{{ list.name }}</p>
+            <p>{{ list.pricePerUnit }}</p>
+            <p>x{{ list.quantity }}</p>
+            <p>{{ list.quantity * list.pricePerUnit }}</p>
+          </div>
         </div>
 
         <div class="total">
           <p>Total</p>
-          <p>{{ total }}</p>
+          <p>{{ getTotal }}</p>
         </div>
 
         <div class="button-group">
@@ -72,9 +82,24 @@
 
 .order-list {
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px 50px;
+  gap: 10px;
+}
+
+.list > p {
+  margin: 0;
+}
+
+.list > p:not(:first-child) {
+  text-align: right;
 }
 </style>
 
@@ -83,7 +108,6 @@ export default {
   name: "Home",
   data() {
     return {
-      total: 0,
       orderList: [
         {
           name: "Lollipop",
@@ -117,6 +141,20 @@ export default {
         },
       ],
     };
+  },
+
+  computed: {
+    getTotal() {
+      const total = this.orderList.reduce(
+        (prev, current) => prev + current.quantity * current.pricePerUnit,
+        0
+      );
+
+      return new Intl.NumberFormat("th-TH", {
+        style: "currency",
+        currency: "THB",
+      }).format(total);
+    },
   },
 };
 </script>
