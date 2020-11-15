@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "name": "Lollipop",
+      "price": 20,
+      "id": 1
+    },
+    {
+      "name": "Magic",
+      "price": 200,
+      "id": 2
+    },
+    {
+      "name": "Sword",
+      "price": 50,
+      "id": 3
+    },
+    {
+      "name": "Gun",
+      "price": 100,
+      "id": 4
+    },
+    {
+      "name": "Car",
+      "price": 1000,
+      "id": 5
+    },
+    {
+      "name": "Keyboard",
+      "price": 300,
+      "id": 6
+    }
+  ],
+  "history": [
+    [
+      {
+        "id": 1,
+        "name": "Lollipop",
+        "total": 20
+      },
+      {
+        "id": 2,
+        "name": "Magic",
+        "total": 200
+      },
+      {
+        "id": 3,
+        "name": "Sword",
+        "total": 50
+      },
+      {
+        "id": 6,
+        "name": "Keyboard",
+        "total": 900
+      }
+    ],
+    [
+      {
+        "id": 6,
+        "name": "Keyboard",
+        "total": 300
+      },
+      {
+        "id": 5,
+        "name": "Car",
+        "total": 1000
+      },
+      {
+        "id": 4,
+        "name": "Gun",
+        "total": 100
+      },
+      {
+        "id": 3,
+        "name": "Sword",
+        "total": 50
+      },
+      {
+        "id": 2,
+        "name": "Magic",
+        "total": 200
+      },
+      {
+        "id": 1,
+        "name": "Lollipop",
+        "total": 20
+      }
+    ]
+  ]
+}
